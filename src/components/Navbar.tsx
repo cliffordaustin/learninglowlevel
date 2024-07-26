@@ -6,9 +6,10 @@ import DarkModeSwitch from "./ui/DarkModeSwitch";
 import Link from "next/link";
 
 function Navbar() {
-  const darkMode: boolean = localStorage.getItem("darkMode")
-    ? JSON.parse(localStorage.getItem("darkMode") || "")
-    : false;
+  const darkMode: boolean =
+    typeof window !== "undefined" && window.localStorage.getItem("darkMode")
+      ? JSON.parse(window.localStorage.getItem("darkMode") || "")
+      : false;
 
   const [dark, setDark] = React.useState<boolean>(darkMode);
 

@@ -16,9 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   useEffect(() => {
-    const darkMode: boolean = localStorage.getItem("darkMode")
-      ? JSON.parse(localStorage.getItem("darkMode") || "")
-      : false;
+    const darkMode: boolean =
+      typeof window !== "undefined" && window.localStorage.getItem("darkMode")
+        ? JSON.parse(window.localStorage.getItem("darkMode") || "")
+        : false;
 
     if (darkMode) {
       document.body.classList.add("dark");

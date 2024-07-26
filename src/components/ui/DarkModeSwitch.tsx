@@ -13,7 +13,9 @@ function DarkModeSwitch({
 }) {
   const darkModeHandler = () => {
     setDark(!dark);
-    localStorage.setItem("darkMode", JSON.stringify(!dark));
+    typeof window !== "undefined"
+      ? window.localStorage.setItem("darkMode", JSON.stringify(!dark))
+      : "";
     document.body.classList.toggle("dark");
   };
   return (
