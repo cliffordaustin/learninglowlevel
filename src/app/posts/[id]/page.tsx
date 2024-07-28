@@ -8,9 +8,17 @@ import {
 } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { serverClient } from "@/app/_trpc/serverClient";
+import rehypeRaw from "rehype-raw";
 import prisma from "@/db/db";
+import {
+  MdOutlineArrowForwardIos,
+  MdOutlineArrowBackIosNew,
+} from "react-icons/md";
 
 async function PostPage({ params }: { params: { id: string } }) {
+  const markdown = `
+
+  `;
   // await prisma.post.update({
   //   where: { id: params.id },
   //   data: { content: markdown },
@@ -44,6 +52,7 @@ async function PostPage({ params }: { params: { id: string } }) {
       <div className="dark:text-white max-w-[800px] mx-auto bg-gray-100 dark:bg-[#333533] h-full min-h-screen py-8 px-5 md:px-20">
         <h1 className="font-bold text-2xl md:text-3xl">{post?.title}</h1>
         <ReactMarkdown
+          rehypePlugins={[rehypeRaw]}
           className="max-w-full prose-img:mx-auto prose-img:object-cover prose-img:w-[500px] prose-img:sm:w-[500px] prose-img:h-[350px] prose-img:md:h-[430px] prose md:prose-lg dark:prose-invert prose-pre:p-0 prose-pre:bg-transparent"
           components={{
             code(props) {
@@ -68,6 +77,22 @@ async function PostPage({ params }: { params: { id: string } }) {
         >
           {post?.content}
         </ReactMarkdown>
+
+        {/* <div className="mt-8 text-blue-500 flex items-center justify-between">
+          {post?.prevId && (
+            <div className="flex items-center cursor-pointer gap-2">
+              <MdOutlineArrowBackIosNew size={16} />
+              <span>Welcome</span>
+            </div>
+          )}
+
+          {post?.nextId && (
+            <div className="flex items-center gap-2">
+              <span>Next</span>
+              <MdOutlineArrowForwardIos color="blue"></MdOutlineArrowForwardIos>
+            </div>
+          )}
+        </div> */}
       </div>
     </main>
   );

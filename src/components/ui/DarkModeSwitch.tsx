@@ -3,19 +3,18 @@
 import { Switch } from "@nextui-org/react";
 import React, { useEffect } from "react";
 import { IoMdMoon, IoMdSunny } from "react-icons/io";
+import Cookie from "js-cookie";
 
 function DarkModeSwitch({
-  dark,
-  setDark,
+  light,
+  setLight,
 }: {
-  dark: boolean;
-  setDark: (value: boolean) => void;
+  light: boolean;
+  setLight: (value: boolean) => void;
 }) {
-  const darkModeHandler = () => {
-    setDark(!dark);
-    typeof window !== "undefined"
-      ? window.localStorage.setItem("darkMode", JSON.stringify(!dark))
-      : "";
+  const lightModeHandler = () => {
+    setLight(!light);
+    Cookie.set("lightMode", JSON.stringify(!light));
     document.body.classList.toggle("dark");
   };
   return (
@@ -24,10 +23,10 @@ function DarkModeSwitch({
         defaultSelected
         size="lg"
         color="secondary"
-        isSelected={dark}
-        onClick={() => darkModeHandler()}
+        isSelected={!light}
+        onClick={() => lightModeHandler()}
         thumbIcon={({ isSelected, className }) =>
-          isSelected ? (
+          !isSelected ? (
             <IoMdMoon className={className} />
           ) : (
             <IoMdSunny className={className} />
