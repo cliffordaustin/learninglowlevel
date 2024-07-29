@@ -22,7 +22,7 @@ function PostNavigate({
     <div className="mt-8 text-white sm:text-blue-500 flex flex-wrap items-center justify-between">
       {prevId ? (
         <Link href={`/posts/${prevId}`}>
-          <div className="flex items-center cursor-pointer bg-gray-400 dark:bg-[#242423] sm:bg-transparent p-4 sm:p-0 gap-2">
+          <div className="flex items-center cursor-pointer bg-gray-400 dark:bg-[#242423] sm:dark:bg-transparent sm:bg-transparent p-4 sm:p-0 gap-2">
             <MdOutlineArrowBackIosNew size={16} />
             <span className="hidden sm:block">{prevPost?.data?.title}</span>
           </div>
@@ -33,7 +33,7 @@ function PostNavigate({
 
       {nextId ? (
         <Link href={`/posts/${nextId}`}>
-          <div className="flex items-center gap-2 cursor-pointer bg-gray-400 dark:bg-[#242423] sm:bg-transparent p-4 sm:p-0">
+          <div className="flex items-center gap-2 cursor-pointer bg-gray-400 dark:bg-[#242423] sm:dark:bg-transparent sm:bg-transparent p-4 sm:p-0">
             <span className="hidden sm:block">{nextPost?.data?.title}</span>
             <MdOutlineArrowForwardIos size={16}></MdOutlineArrowForwardIos>
           </div>
