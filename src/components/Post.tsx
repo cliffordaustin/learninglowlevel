@@ -10,7 +10,7 @@ function Post({ post }: { post: PostType }) {
       href={`/posts/${post.id}`}
       className="flex sm:flex-row flex-col gap-5 py-8 border-b border-gray-200 dark:border-[#bfc0c0]"
     >
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col sm:order-1 order-2 gap-3">
         <div className="flex items-center gap-2 flex-wrap">
           {post.tags.map((tag) => (
             <span key={tag} className="text-sm text-white p-1 bg-gray-500">
@@ -25,7 +25,7 @@ function Post({ post }: { post: PostType }) {
           {formatDistance(post.createdAt, new Date(), { addSuffix: true })}
         </div>
       </div>
-      <div className="relative w-full sm:w-[600px] md:w-[400px] h-[200px] sm:h-[150px]">
+      <div className="relative w-full sm:order-2 order-1 sm:w-[600px] md:w-[400px] h-[200px] sm:h-[150px]">
         <Image
           src={post.thumbnail}
           alt={post.title}
