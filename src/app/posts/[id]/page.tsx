@@ -10,10 +10,7 @@ import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { serverClient } from "@/app/_trpc/serverClient";
 import rehypeRaw from "rehype-raw";
 import prisma from "@/db/db";
-import {
-  MdOutlineArrowForwardIos,
-  MdOutlineArrowBackIosNew,
-} from "react-icons/md";
+import PostNavigate from "@/components/PostNavigate";
 
 async function PostPage({ params }: { params: { id: string } }) {
   const markdown = `
@@ -78,21 +75,7 @@ async function PostPage({ params }: { params: { id: string } }) {
           {post?.content}
         </ReactMarkdown>
 
-        {/* <div className="mt-8 text-blue-500 flex items-center justify-between">
-          {post?.prevId && (
-            <div className="flex items-center cursor-pointer gap-2">
-              <MdOutlineArrowBackIosNew size={16} />
-              <span>Welcome</span>
-            </div>
-          )}
-
-          {post?.nextId && (
-            <div className="flex items-center gap-2">
-              <span>Next</span>
-              <MdOutlineArrowForwardIos color="blue"></MdOutlineArrowForwardIos>
-            </div>
-          )}
-        </div> */}
+        <PostNavigate prevId={post?.prevId} nextId={post?.nextId} />
       </div>
     </main>
   );
