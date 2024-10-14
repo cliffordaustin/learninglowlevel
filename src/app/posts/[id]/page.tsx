@@ -39,9 +39,14 @@ async function PostPage({ params }: { params: { id: string } }) {
 
       <div className="dark:text-white max-w-[800px] overflow-hidden mx-auto bg-gray-100 dark:bg-[#333533] h-full min-h-screen py-8 px-5 md:px-20">
         <h1 className="font-bold text-2xl md:text-3xl">{post?.title}</h1>
-        <div className="relative w-[500px] h-[350px] my-8 mx-auto">
+        <div className="relative max-w-full h-[300px] md:h-[350px] my-8 mx-auto">
           {post?.thumbnail && (
-            <Image src={post?.thumbnail} alt={post?.title || ""} fill />
+            <Image
+              className="object-cover"
+              src={post?.thumbnail}
+              alt={post?.title || ""}
+              fill
+            />
           )}
         </div>
         <ReactMarkdown
