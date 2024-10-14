@@ -23,7 +23,6 @@ async function PostPage({ params }: { params: { id: string } }) {
       PreTag="div"
       language={props.language}
       style={dracula}
-      // ref={ref}
     >
       {props.children}
     </SyntaxHighlighter>
