@@ -11,6 +11,24 @@ import rehypeRaw from "rehype-raw";
 import PostNavigate from "@/components/PostNavigate";
 import Image from "next/image";
 import Head from "next/head";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const post = await serverClient.getPostById(params.id);
+  return {
+    title: post?.title,
+    description: post?.description,
+    openGraph: {
+      title: post?.title,
+      description: post?.description,
+      images: [post?.thumbnail || ""],
+    },
+  };
+}
 
 async function PostPage({ params }: { params: { id: string } }) {
   const post = await serverClient.getPostById(params.id);
@@ -37,7 +55,7 @@ async function PostPage({ params }: { params: { id: string } }) {
         <title>{post?.title}</title>
         <meta name="description" content={post?.description} />
         <meta name="keywords" content={post?.tags.join(",")} />
-
+        {/* 
         <meta property="og:title" content={post?.title} />
         <meta property="og:description" content={post?.description} />
         <meta property="og:image" content={post?.thumbnail} />
@@ -46,7 +64,7 @@ async function PostPage({ params }: { params: { id: string } }) {
         <meta name="twitter:description" content={post?.description} />
         <meta name="twitter:image" content={post?.thumbnail} />
 
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow" /> */}
       </Head>
       <div className="sticky top-0 left-0 right-0 w-full z-10 bg-white dark:bg-[#242423]">
         <Navbar></Navbar>
