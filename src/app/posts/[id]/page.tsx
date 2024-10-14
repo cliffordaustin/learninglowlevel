@@ -37,7 +37,7 @@ async function PostPage({ params }: { params: { id: string } }) {
         <Navbar></Navbar>
       </div>
 
-      <div className="dark:text-white max-w-[800px] overflow-hidden mx-auto bg-gray-100 dark:bg-[#333533] h-full min-h-screen py-8 px-5 md:px-20">
+      <div className="dark:text-white break-words max-w-[800px] overflow-hidden mx-auto bg-gray-100 dark:bg-[#333533] h-full min-h-screen py-8 px-5 md:px-20">
         <h1 className="font-bold text-2xl md:text-3xl">{post?.title}</h1>
         <div className="relative max-w-full h-[300px] md:h-[350px] my-8 mx-auto">
           {post?.thumbnail && (
@@ -51,7 +51,7 @@ async function PostPage({ params }: { params: { id: string } }) {
         </div>
         <ReactMarkdown
           rehypePlugins={[rehypeRaw]}
-          className="max-w-full prose-a:block prose-a:line-clamp-1 prose-a:text-ellipsis prose-a:text-blue-400 prose-img:mx-auto prose-img:object-contain prose-img:w-[500px] prose-img:sm:w-[600px] prose-img:max-h-[350px] prose-img:md:max-h-[430px] prose md:prose-lg dark:prose-invert prose-pre:p-0 prose-pre:bg-transparent"
+          className="max-w-full prose-a:text-blue-400 hover:prose-a:text-blue-500 prose-img:mx-auto prose-img:object-contain prose-img:w-[500px] prose-img:sm:w-[600px] prose-img:max-h-[350px] prose-img:md:max-h-[430px] prose md:prose-lg dark:prose-invert prose-pre:p-0 prose-pre:bg-transparent"
           components={{
             code(props) {
               const { children, className, node, ...rest } = props;
