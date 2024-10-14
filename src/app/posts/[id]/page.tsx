@@ -12,6 +12,7 @@ import PostNavigate from "@/components/PostNavigate";
 import Image from "next/image";
 import Head from "next/head";
 import type { Metadata } from "next";
+import PostTracker from "@/components/PostTracker";
 
 export async function generateMetadata({
   params,
@@ -51,24 +52,11 @@ async function PostPage({ params }: { params: { id: string } }) {
 
   return (
     <main>
-      <Head>
-        <title>{post?.title}</title>
-        <meta name="description" content={post?.description} />
-        <meta name="keywords" content={post?.tags.join(",")} />
-        {/* 
-        <meta property="og:title" content={post?.title} />
-        <meta property="og:description" content={post?.description} />
-        <meta property="og:image" content={post?.thumbnail} />
-
-        <meta name="twitter:title" content={post?.title} />
-        <meta name="twitter:description" content={post?.description} />
-        <meta name="twitter:image" content={post?.thumbnail} />
-
-        <meta name="robots" content="index, follow" /> */}
-      </Head>
       <div className="sticky top-0 left-0 right-0 w-full z-10 bg-white dark:bg-[#242423]">
         <Navbar></Navbar>
       </div>
+
+      <PostTracker post={post} />
 
       <div className="dark:text-white break-words max-w-[800px] overflow-hidden mx-auto bg-gray-100 dark:bg-[#333533] h-full min-h-screen py-8 px-5 md:px-20">
         <h1 className="font-bold text-2xl md:text-3xl">{post?.title}</h1>

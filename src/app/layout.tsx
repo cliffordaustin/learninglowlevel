@@ -4,9 +4,10 @@ import { Ubuntu } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 import { useEffect } from "react";
-import { cookies } from "next/headers";
+import mixpanel from "mixpanel-browser";
 import Cookie from "js-cookie";
 import Provider from "./_trpc/Provider";
+import ReactGA from "react-ga4";
 
 const ubuntu = Ubuntu({
   weight: ["300", "400", "500", "700"],
@@ -25,6 +26,15 @@ export default function RootLayout({
       document.body.classList.remove("dark");
     } else {
       document.body.classList.add("dark");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (
+      process.env.NODE_ENV === "production" &&
+      process.env.NEXT_PUBLIC_GA_TRACKING_ID
+    ) {
+      ReactGA.initialize(process.env.NEXT_PUBLIC_GA_TRACKING_ID);
     }
   }, []);
   return (
