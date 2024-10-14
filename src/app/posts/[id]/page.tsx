@@ -45,6 +45,8 @@ async function PostPage({ params }: { params: { id: string } }) {
         <meta name="twitter:title" content={post?.title} />
         <meta name="twitter:description" content={post?.description} />
         <meta name="twitter:image" content={post?.thumbnail} />
+
+        <meta name="robots" content="index, follow" />
       </Head>
       <div className="sticky top-0 left-0 right-0 w-full z-10 bg-white dark:bg-[#242423]">
         <Navbar></Navbar>
