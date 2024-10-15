@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   description:
     "Explore low-level programming concepts like memory management and data structures with practical guides and projects, mastering the core of computer science.",
   title: "Mastering the Fundamentals: Low-Level Programming Concepts",
+  openGraph: {
+    title: "Mastering the Fundamentals: Low-Level Programming Concepts",
+    description:
+      "Explore low-level programming concepts like memory management and data structures with practical guides and projects, mastering the core of computer science.",
+    url: "https://learninglowlevel.com",
+    images: "/logo-background-white.jpg",
+  },
 };
 
 export default async function Home() {
