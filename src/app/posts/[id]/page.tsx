@@ -20,6 +20,7 @@ export async function generateMetadata({
   params: { id: string };
 }): Promise<Metadata> {
   const post = await serverClient.getPostById(params.id);
+  const url = `https://learninglowlevel.com/posts/${params.id}`;
   return {
     title: post?.title,
     description: post?.description,
@@ -27,6 +28,9 @@ export async function generateMetadata({
       title: post?.title,
       description: post?.description,
       images: [post?.thumbnail || ""],
+      type: "article",
+      siteName: "Learning Low Level",
+      url,
     },
   };
 }
