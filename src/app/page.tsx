@@ -1,6 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Post from "@/components/Post";
 import { serverClient } from "./_trpc/serverClient";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  description:
+    "Explore low-level programming concepts like memory management and data structures with practical guides and projects, mastering the core of computer science.",
+  title: "Mastering the Fundamentals: Low-Level Programming Concepts",
+};
 
 export default async function Home() {
   const posts = await serverClient.getPosts();
