@@ -2,16 +2,22 @@
 
 import { Ubuntu } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
+import Script from "next/script";
 import "./globals.css";
 import { useEffect } from "react";
 import Cookie from "js-cookie";
 import Provider from "./_trpc/Provider";
 import ReactGA from "react-ga4";
+import TagManager from "react-gtm-module";
 
 const ubuntu = Ubuntu({
   weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
 });
+
+const tagManagerArgs = {
+  gtmId: "GTM-MXFRZ7FF",
+};
 
 export default function RootLayout({
   children,
@@ -35,6 +41,8 @@ export default function RootLayout({
     ) {
       ReactGA.initialize(process.env.NEXT_PUBLIC_GA_TRACKING_ID);
     }
+
+    TagManager.initialize(tagManagerArgs);
   }, []);
   return (
     <html lang="en">
