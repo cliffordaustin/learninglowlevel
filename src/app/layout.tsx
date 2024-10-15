@@ -4,7 +4,6 @@ import { Ubuntu } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 import { useEffect } from "react";
-import mixpanel from "mixpanel-browser";
 import Cookie from "js-cookie";
 import Provider from "./_trpc/Provider";
 import ReactGA from "react-ga4";
