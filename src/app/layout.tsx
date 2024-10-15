@@ -2,7 +2,6 @@
 
 import { Ubuntu } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
-import Script from "next/script";
 import "./globals.css";
 import { useEffect } from "react";
 import Cookie from "js-cookie";
