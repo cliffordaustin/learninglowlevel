@@ -31,6 +31,8 @@ export async function generateMetadata({
       type: "article",
       siteName: "Learning Low Level",
       url,
+      authors: "Clifford Ofili",
+      publishedTime: post?.createdAt.toString(),
     },
   };
 }
