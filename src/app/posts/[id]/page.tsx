@@ -10,7 +10,6 @@ import { serverClient } from "@/app/_trpc/serverClient";
 import rehypeRaw from "rehype-raw";
 import PostNavigate from "@/components/PostNavigate";
 import Image from "next/image";
-import Head from "next/head";
 import type { Metadata } from "next";
 import PostTracker from "@/components/PostTracker";
 
