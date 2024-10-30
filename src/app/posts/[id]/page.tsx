@@ -5,11 +5,12 @@ import {
   Prism as SyntaxHighlighter,
   SyntaxHighlighterProps,
 } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { serverClient } from "@/app/_trpc/serverClient";
 import rehypeRaw from "rehype-raw";
 import PostNavigate from "@/components/PostNavigate";
 import Image from "next/image";
+import remarkGfm from "remark-gfm";
 import type { Metadata } from "next";
 import PostTracker from "@/components/PostTracker";
 
@@ -47,7 +48,7 @@ async function PostPage({ params }: { params: { id: string } }) {
       {...props}
       PreTag="div"
       language={props.language}
-      style={dracula}
+      style={tomorrow}
     >
       {props.children}
     </SyntaxHighlighter>
@@ -77,6 +78,7 @@ async function PostPage({ params }: { params: { id: string } }) {
         </div>
         <ReactMarkdown
           rehypePlugins={[rehypeRaw]}
+          remarkPlugins={[remarkGfm]}
           className="max-w-full prose-a:text-blue-400 hover:prose-a:text-blue-500 prose-img:mx-auto prose-img:object-contain prose-img:w-[500px] prose-img:sm:w-[600px] prose-img:max-h-[350px] prose-img:md:max-h-[430px] prose md:prose-lg dark:prose-invert prose-pre:p-0 prose-pre:bg-transparent"
           components={{
             code(props) {
@@ -87,12 +89,12 @@ async function PostPage({ params }: { params: { id: string } }) {
                   {...rest}
                   PreTag="div"
                   language={match[1]}
-                  style={dracula}
+                  style={tomorrow}
                 >
                   {String(children).replace(/\n$/, "")}
                 </CustomSyntaxHighlighter>
               ) : (
-                <code {...rest} className={className}>
+                <code {...props} className="bg-gray-500 text-white">
                   {children}
                 </code>
               );
