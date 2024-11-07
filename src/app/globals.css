@@ -164,6 +164,11 @@ body {
   /* transform: scale(1.2); */
 }
 
+.blend-text {
+  mix-blend-mode: color-burn;
+  transform: translate3d(0, 0, 0);
+}
+
 @media (max-width: 767px) {
   #gradient-canvas {
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 60%);

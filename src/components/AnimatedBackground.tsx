@@ -53,7 +53,7 @@ function AnimatedBackground() {
             </p>
           </div>
         </div>
-        <div className="w-full mix-blend-color-burn">
+        <div className="w-full blend-text">
           <h1
             className={
               "text-[30px] md:text-[50px] xl:text-[60px] font-semibold font-mono text-[#3a3a3a] relative -z-10 " +
