@@ -22,10 +22,10 @@ function Learn() {
   ];
 
   const mobileDev = [
-    "Mobile app development with Flutter",
+    "Mobile app development with React Native",
     "Cross-platform best practices",
     "State management and navigation",
-    "Backend integration with REST and GraphQL APIs",
+    "Backend integration with REST APIs",
     "Testing and debugging mobile applications",
     "Publishing apps on App Store and Google Play",
   ];
