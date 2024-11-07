@@ -39,9 +39,14 @@ function Navbar() {
           Posts
         </Link>
 
-        <Button className="bg-[#8338ec] text-white px-2 sm:px-6" radius="full">
-          Apply
-        </Button>
+        <Link href="https://forms.gle/AAWH64uLB6Dmf9Ur8" target="_blank">
+          <Button
+            className="bg-[#8338ec] text-white px-2 sm:px-6"
+            radius="full"
+          >
+            Apply
+          </Button>
+        </Link>
       </div>
 
       {/* <DarkModeSwitch light={light} setLight={setLight}></DarkModeSwitch> */}
