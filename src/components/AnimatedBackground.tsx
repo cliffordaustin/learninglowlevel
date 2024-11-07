@@ -71,9 +71,9 @@ function AnimatedBackground() {
           <span className="font-bold">LearningLowLevel</span> offers hands-on
           coding classes for teens aged 13-19, teaching them to create websites,
           apps, and solve real-world problems using AI/Machine Learning. Whether
-          you're a beginner or already have some coding experience, students
-          gain practical skills and foundational knowledge to shape the future
-          of tech. Start building tomorrow, today!
+          you&apos;re a beginner or already have some coding experience,
+          students gain practical skills and foundational knowledge to shape the
+          future of tech. Start building tomorrow, today!
         </p>
 
         <div className="mt-6 flex items-center gap-4">

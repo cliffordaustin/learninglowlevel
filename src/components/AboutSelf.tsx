@@ -70,8 +70,8 @@ function AboutSelf() {
 
         <div className="w-full z-10 flex flex-col gap-3 text-gray-600">
           <p>
-            Hello!👋🏽 I'm <span className="font-bold">Clifford Ofili</span>, a
-            passionate software engineer with years of experience in software
+            Hello!👋🏽 I&apos;m <span className="font-bold">Clifford Ofili</span>,
+            a passionate software engineer with years of experience in software
             development. Through my career, I’ve worked on projects across
             various industries, from healthcare technology to travel systems,
             and have gained deep expertise in building scalable applications

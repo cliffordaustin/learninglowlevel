@@ -40,7 +40,7 @@ function Main() {
   useEffect(() => {
     // @ts-ignore
     gradient.initGradient("#gradient-canvas");
-  }, []);
+  });
 
   return (
     <div className="relative w-full overflow-x-hidden">

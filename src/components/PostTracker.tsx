@@ -21,7 +21,7 @@ function PostTracker({ post }: { post?: Post | null }) {
         tags: post?.tags,
       });
     }
-  }, []);
+  });
   return <div></div>;
 }
 
