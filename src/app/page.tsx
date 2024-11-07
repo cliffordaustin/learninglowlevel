@@ -1,44 +1,32 @@
+import Main from "@/components/Main";
 import Navbar from "@/components/Navbar";
-import Post from "@/components/Post";
-import { serverClient } from "./_trpc/serverClient";
-import type { Metadata } from "next";
+import React from "react";
+import Link from "next/link";
+import { Button } from "@nextui-org/react";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
-export const metadata: Metadata = {
-  description:
-    "Explore low-level programming concepts like memory management and data structures with practical guides and projects, mastering the core of computer science.",
-  title: "Mastering the Fundamentals: Low-Level Programming Concepts",
-  openGraph: {
-    title: "Mastering the Fundamentals: Low-Level Programming Concepts",
-    description:
-      "Explore low-level programming concepts like memory management and data structures with practical guides and projects, mastering the core of computer science.",
-    url: "https://learninglowlevel.com",
-    images: "/logo-background-white.png",
-  },
-};
-
-export default async function Home() {
-  const posts = await serverClient.getPosts();
-
+function Homepage() {
   return (
-    <main className="">
-      <div className="sticky top-0 left-0 right-0 w-full z-10 bg-white dark:bg-[#242423]">
-        <Navbar></Navbar>
+    <main className="relative">
+      <div className="sticky top-0 left-0 right-0 w-full z-20 h-[45px] bg-[#001219] contrast-75 flex gap-2 items-center justify-center">
+        <p className="text-gray-100 text-sm md:text-base">
+          🎉 Apply today and get one month{" "}
+          <span className="font-bold">free</span>
+        </p>
+        <Link href="https://forms.gle/AAWH64uLB6Dmf9Ur8" target="_blank">
+          <Button
+            className="bg-[#8338ec] flex items-center gap-1 text-white px-2 md:px-4"
+            size="sm"
+            radius="full"
+          >
+            <p>Apply today</p>
+            <FaLongArrowAltRight className="text-white text-lg hidden md:block" />
+          </Button>
+        </Link>
       </div>
-      <div className="dark:text-white flex w-full dark:bg-[#333533] h-full min-h-screen py-8 px-6 md:px-12">
-        <div className="w-full lg:max-w-[1200px] mx-auto">
-          <div className="w-full lg:w-[70%]">
-            <span className="font-serif text-3xl md:text-4xl font-bold">
-              Posts
-            </span>
-
-            <div className="md:mt-6 flex flex-col">
-              {posts.map((post) => (
-                <Post key={post.id} post={post}></Post>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+      <Main></Main>
     </main>
   );
 }
+
+export default Homepage;

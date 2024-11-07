@@ -23,15 +23,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useEffect(() => {
-    const lightMode = Cookie.get("lightMode") === "true" ? true : false;
+  // useEffect(() => {
+  //   const lightMode = Cookie.get("lightMode") === "true" ? true : false;
 
-    if (lightMode) {
-      document.body.classList.remove("dark");
-    } else {
-      document.body.classList.add("dark");
-    }
-  }, []);
+  //   if (lightMode) {
+  //     document.body.classList.remove("dark");
+  //   } else {
+  //     document.body.classList.add("dark");
+  //   }
+  // }, []);
 
   useEffect(() => {
     if (
@@ -45,7 +45,7 @@ export default function RootLayout({
   }, []);
   return (
     <html lang="en">
-      <body className={"dark bg-[#242423] " + ubuntu.className}>
+      <body className={"" + ubuntu.className}>
         <NextTopLoader
           color="#eb5e28"
           initialPosition={0.08}
@@ -58,7 +58,7 @@ export default function RootLayout({
           shadow="0 0 10px #eb5e28,0 0 5px #eb5e28"
         />
         <Provider>
-          <main className="dark:bg-[#242423] bg-white">{children}</main>
+          <main className=" bg-white">{children}</main>
         </Provider>
       </body>
     </html>
