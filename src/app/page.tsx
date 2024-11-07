@@ -5,6 +5,20 @@ import Link from "next/link";
 import { Button } from "@nextui-org/react";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import PageTracker from "@/components/PageTracker";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Learning Low Level",
+  description:
+    "LearningLowLeveloffers hands-on coding classes for teens aged 13-19, teaching them to create websites, apps, and solve real-world problems using AI/Machine Learning. Whether you're a beginner or already have some coding experience, students gain practical skills and foundational knowledge to shape the future of tech. Start building tomorrow, today!",
+  openGraph: {
+    title: "Learning Low Level",
+    description:
+      "LearningLowLeveloffers hands-on coding classes for teens aged 13-19, teaching them to create websites, apps, and solve real-world problems using AI/Machine Learning. Whether you're a beginner or already have some coding experience, students gain practical skills and foundational knowledge to shape the future of tech. Start building tomorrow, today!",
+    url: "https://learninglowlevel.com",
+    images: "/logo-background-white.png",
+  },
+};
 
 function Homepage() {
   return (
