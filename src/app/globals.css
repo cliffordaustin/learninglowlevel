@@ -156,10 +156,10 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  --gradient-color-1: #480ca8;
-  --gradient-color-2: #f72585;
-  --gradient-color-3: #ff9e00;
-  --gradient-color-4: #00a6fb;
+  --gradient-color-1: #c77dff;
+  --gradient-color-2: #ff758f;
+  --gradient-color-3: #ffd166;
+  --gradient-color-4: #a2d2ff;
   /* filter: blur(40px); */
   /* transform: scale(1.2); */
 }
