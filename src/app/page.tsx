@@ -4,10 +4,12 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@nextui-org/react";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import PageTracker from "@/components/PageTracker";
 
 function Homepage() {
   return (
     <main className="relative">
+      <PageTracker text="Homepage view" />
       <div className="sticky top-0 left-0 right-0 w-full z-20 h-[45px] bg-[#001219] contrast-75 flex gap-2 items-center justify-center">
         <p className="text-gray-100 text-sm md:text-base">
           🎉 Apply today and get one month{" "}
